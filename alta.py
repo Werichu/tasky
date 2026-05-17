@@ -11,10 +11,11 @@ def darAlta():
     id=1;
 
     while True:
-        descripcion = input("Digite su descripcion: ")
+        descripcion = input("\nDigite su descripcion: ")
         estado = input("Digite el estado de la tarea: ")
         fechaCreacion = datetime.today()
         fechaActualizacion = datetime.today()
+        print(f'\n >>>>>> tarea registrada con el id: {id}')
         
         #se crea un nuevo objeto tarea con los parametros del usuario y esta se aniade a la lista
         nuevaTarea = Tarea(id,descripcion,estado,fechaCreacion,fechaActualizacion)
@@ -22,7 +23,7 @@ def darAlta():
         id+=1
 
         #siempre preguntamos si desea continuar registrando tareas
-        continuar = input("Desea agregar otra tarea? (S/n)")
+        continuar = input("Desea agregar otra tarea? (S/n): ")
         if continuar.lower() != 's':
             break
     #al final la funcion retorna todas las tareas que el usuario agrego
