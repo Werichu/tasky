@@ -1,5 +1,6 @@
 from alta import darAlta
 from actualizar import actualizarTarea
+from mostrarTodo import mostrarTodo
 def main(): 
     opcion = 1
 
@@ -8,8 +9,8 @@ def main():
 
     while opcion != 0:
         print('===== Tasky =====')
-        print('[1.] Registrar tarea\n[2.] modificar estado de la tarea\n[3.] Borrar tarea\n[4.] Guardar')
-        print('[5.] Mostrar todo\n[6.] Mostrar no relizadas\n[7.] Mostrar tareas pendientes')
+        print('[1.] Registrar tarea\n[2.] modificar estado de la tarea\n[3.] Mostrar todo\n[4.] Mostrar tareas hechas')
+        print('[5.] Mostrar tareas pendientes\n[6.] borrar tareas\n[7.] Guardar tareas')
         print('[0.] Salir')
         opcion = int(input('>>>>> opcion: '))
 
@@ -22,7 +23,7 @@ def main():
         elif opcion == 2:
             actualizarTarea(todas_las_tareas)
         elif opcion == 3:
-            print("proximamente..........")
+            mostrarTodo(todas_las_tareas)
         elif opcion == 4:
             print("proximamente..........")
         elif opcion == 5:
