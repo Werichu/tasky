@@ -20,37 +20,46 @@ class Tarea:
         self._status = status
         self._createdAt = createdAt
         self._updatedAt = updatedAt
-        
-    #metodos "dame"
-    def getId(self):
+
+    #getter metodos "dame"
+    @property
+    def id(self):
         return self._id
-    
-    def getDescription(self):
+
+    @property
+    def description(self):
         return self._description
-    
-    def getStatus(self):
+
+    @property
+    def status(self):
         return self._status
-    
-    def getCreatedAt(self):
+
+    @property
+    def createdAt(self):
         return self._createdAt
-    
-    def getUpdateAt(self):
+
+    @property
+    def updatedAt(self):
         return self._updatedAt
-    
-    #metodos "fija"
-    #si se recibe algun valor de una variable publica, esta se fijara en los atributos privados del objeto
-    def setId(self,valor):
-        self._id = valor
-        
-    def setDescription(self,valor):
-        self._description = valor
-    
-    def setStatus(self,valor):
-        self._status = valor
-        
-    def setCreatedAt(self,valor):
-        self._createdAt = valor
-        
-    def setUpdateAt(self,valor):
-        self._updatedAt = valor
-        
+                 
+    #setter, metodos "fija"
+    @id.setter
+    def id(self,nuevoId):
+        self._id = nuevoId
+
+    @description.setter
+    def description(self,nuevaDescripcion):
+        self._description = nuevaDescripcion
+
+    @status.setter
+    def status(self,nuevoStatus):
+        self._status = nuevoStatus
+
+    @createdAt.setter
+    def createdAt(self, nuevafecha):
+        self._createdAt = nuevafecha
+
+    @updatedAt.setter
+    def updatedAt(self, actualizacionFecha):
+        self._updatedAt = actualizacionFecha
+
