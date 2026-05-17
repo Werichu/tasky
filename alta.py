@@ -1,27 +1,29 @@
+from datetime import date
+from datetime import datetime
 from tarea import Tarea
+
 '''
-Esta funcion se encarga de dar de alta las tareas registradas por el usuario
-creandoce un nuevo objeto en el proceso y guardandose dentro de una lista, cuando el usuario deja de registrar
-tareas, la funcion retorna la lista de todos los registros para ser trabajados en otras funciones
+En esta funcion damos de alta las tareas registradas por el usuario, mediante un listado de objetos
 '''
-def darAlta():   
-    ListaTareas=[]
-    id=1
-    
+def darAlta():
+    #variables de la lista y la id de la tarea
+    listadoTareas=[]
+    id=1;
+
     while True:
+        descripcion = input("Digite su descripcion: ")
+        estado = input("Digite el estado de la tarea: ")
+        fechaCreacion = datetime.today()
+        fechaActualizacion = datetime.today()
         
-        descripcion=input("Digite una descripcion: ")
-        estatus=input("Digite el estado de la tarea: ")
-        fechaCreacion = '---'
-        fechaActualizacion='---'
-        
-        nuevaTarea=Tarea(id,descripcion,estatus,fechaCreacion,fechaActualizacion)
-        ListaTareas.append(nuevaTarea)
+        #se crea un nuevo objeto tarea con los parametros del usuario y esta se aniade a la lista
+        nuevaTarea = Tarea(id,descripcion,estado,fechaCreacion,fechaActualizacion)
+        listadoTareas.append(nuevaTarea)
         id+=1
-        
-        continuar = input("Quieres agregar una nueva tarea? (S/n): ")
+
+        #siempre preguntamos si desea continuar registrando tareas
+        continuar = input("Desea agregar otra tarea? (S/n)")
         if continuar.lower() != 's':
             break
-        
-    return ListaTareas
-
+    #al final la funcion retorna todas las tareas que el usuario agrego
+    return listadoTareas 
