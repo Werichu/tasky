@@ -14,16 +14,19 @@ se cumplira el condicional y podremos acceder tanto a la descripcion de la tarea
 '''
 
 def actualizarTarea(todas_las_tareas):
-    
-    idBuscar = int(input('Digite una id para modificar el estado de la tarea: '))
-# tarea es una variable auxiliar que nos permite modificar los atributos directamente mediante los setters y getters
-    for tarea in todas_las_tareas:
-        if idBuscar == tarea.id:
-            print(f"Descripcion: {tarea.description}")
-
-            estado = input('digite un nuevo estado de la tarea(Pendiente / En proceso / Hecho): ')
-            print('\n>>>>>> tarea modificada......')
-            tarea.status = estado
-            tarea.updatedAt = datetime.today()
+    #si la lista esta vacia, mostrara este mensaje
+    if not todas_las_tareas: 
+        print("\nNo hay tareas registradas....")
     else:
-        print(f"\n>>>>>> Error, no existe una id con el numero: {idBuscar}")
+    #esta variable es auxiliar, se utiliza como buscador
+        idBuscar = int(input('Digite una id para modificar el estado de la tarea: '))
+    # tarea es una variable auxiliar que nos permite modificar los atributos directamente mediante los setters y getters
+        for tarea in todas_las_tareas:
+            if idBuscar == tarea.id:
+                print(f"Descripcion: {tarea.description}")
+
+                estado = input('digite un nuevo estado de la tarea (Pendiente / En proceso / Hecho): ')
+                print('\n>>>>>> tarea modificada......')
+                tarea.status = estado
+                tarea.updatedAt = datetime.today()
+        else: print(f"\n>>>>>> Error, no existe una id con el numero: {idBuscar}")

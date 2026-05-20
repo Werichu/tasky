@@ -1,6 +1,7 @@
 from alta import darAlta
 from actualizar import actualizarTarea
 from mostrarTodo import mostrarTodo
+from tareasHechas import tareasHechas
 def main(): 
     opcion = 1
 
@@ -25,7 +26,7 @@ def main():
         elif opcion == 3:
             mostrarTodo(todas_las_tareas)
         elif opcion == 4:
-            print("proximamente..........")
+            tareasHechas(todas_las_tareas)
         elif opcion == 5:
             print("proximamente..........")
         elif opcion == 6:

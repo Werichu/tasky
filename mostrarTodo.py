@@ -11,11 +11,14 @@ pudiendo mostrar mediante los getters todos los atributos de la clase
 '''
 
 def mostrarTodo(todas_las_tareas):
-    
-    for tareas in todas_las_tareas:
-        print(f'\nId: {tareas.id}')
-        print(f'Descripcion: {tareas.description}')
-        print(f'Estado: {tareas.status}')
-        print(f'Fecha de creacion: {tareas.createdAt}')
-        print(f'Fecha de actualizacion: {tareas.updatedAt}\n')
+    #si no hay tareas registradas se mostrara este mensaje
+    if not todas_las_tareas:
+        print("\nNo hay tareas registradas...")
+    else: 
+        for tarea in todas_las_tareas:
+            print(f'\nId: {tarea.id}')
+            print(f'Descripcion: {tarea.description}')
+            print(f'Estado: {tarea.status}')
+            print(f'Fecha de creacion: {tarea.createdAt}')
+            print(f'Fecha de actualizacion: {tarea.updatedAt}\n')
     

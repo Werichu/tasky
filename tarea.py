@@ -1,14 +1,17 @@
-#En este archivo se guarda el objeto "tarea", con todas sus propiedades
 '''
-id: Un identificador único para la tarea
+En este archivo se guarda el objeto "tarea" contando con metodos getters y setters
+para que el uso de los metodos sea mas comodo entre archivos
 
-description: Una breve descripción de la tarea
+atributos del objeto: 
+- id: Un identificador único para la tarea
 
-status: El estado de la tarea (Pendiente, En proceso, Hecha)
+- description: Una breve descripción de la tarea
 
-createdAt: La fecha y hora en que se creó la tarea
+- status: El estado de la tarea (Pendiente, En proceso, Hecha)
 
-updatedAt: La fecha y hora en que se actualizó la tarea por última vez
+- createdAt: La fecha y hora en que se creó la tarea
+
+- updatedAt: La fecha y hora en que se actualizó la tarea por última vez
 '''
 
 class Tarea: 
@@ -21,7 +24,7 @@ class Tarea:
         self._createdAt = createdAt
         self._updatedAt = updatedAt
 
-    #getter metodos "dame"
+    #getters, metodos "dame"
     @property
     def id(self):
         return self._id
@@ -42,7 +45,7 @@ class Tarea:
     def updatedAt(self):
         return self._updatedAt
                  
-    #setter, metodos "fija"
+    #setters, metodos "fija"
     @id.setter
     def id(self,nuevoId):
         self._id = nuevoId
