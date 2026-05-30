@@ -12,7 +12,7 @@ def darAlta():
 
     while True:
         descripcion = input("\nDigite su descripcion: ")
-        estado = input("Digite el estado de la tarea: ")
+        estado = input("Digite el estado de la tarea (Pendiente / En proceso / Hecho): ")
         fechaCreacion = datetime.today()
         fechaActualizacion = datetime.today()
         print(f'\n >>>>>> tarea registrada con el id: {id}')
