@@ -4,6 +4,8 @@ from mostrarTodo import mostrarTodo
 from tareasHechas import tareasHechas
 from tareasPendientes import tareasPendientes
 from baja import darBaja
+from guardarJson import guardarArchivo
+
 def main(): 
     opcion = 1
 
@@ -35,7 +37,7 @@ def main():
             #la lista: "todas_las_tareas" guarda la nueva lista de tareas generada al borrar un elemento de la lista
             todas_las_tareas = darBaja(todas_las_tareas)
         elif opcion == 7:
-            print("proximamente.......")
+            guardarArchivo(todas_las_tareas)
         elif opcion == 0:
             print('Byteees!!!!')
         else: 
