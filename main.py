@@ -4,13 +4,35 @@ from mostrarTodo import mostrarTodo
 from tareasHechas import tareasHechas
 from tareasPendientes import tareasPendientes
 from baja import darBaja
-from guardarJson import guardarArchivo
+from guardarJson import guardarArchivo, cargarArchivo
 
 def main(): 
+    #variable que controla el menu de opciones
     opcion = 1
 
-    #lista global que acumula todas las tareas registradas por el usuario
+    #carga los datos del archivo json
+    tareas_cargadas = cargarArchivo()  # esta variable carga diccionarios
+    
+    #conversion de los diccionarios a objetos Tarea
     todas_las_tareas = []
+    for tarea_dict in tareas_cargadas:
+        from tarea import Tarea
+        from datetime import datetime
+        
+        #estas variables convienrten las fechas de string a datetime
+        fecha_creacion = datetime.strptime(tarea_dict["fecha_creacion"], "%Y-%m-%d %H:%M:%S.%f")
+        fecha_actualizado = datetime.strptime(tarea_dict["fecha_actualizacion"], "%Y-%m-%d %H:%M:%S.%f")
+        
+        #crear objeto Tarea
+        tarea = Tarea(
+            tarea_dict["id"],
+            tarea_dict["descripcion"],
+            tarea_dict["estado"],
+            fecha_creacion,
+            fecha_actualizado
+        )
+        #se aniaden a la lista 
+        todas_las_tareas.append(tarea)
 
     while opcion != 0:
         print('===== Tasky =====')
@@ -39,6 +61,7 @@ def main():
         elif opcion == 7:
             guardarArchivo(todas_las_tareas)
         elif opcion == 0:
+            guardarArchivo(todas_las_tareas)
             print('Byteees!!!!')
         else: 
             print('Error, opcion no valida.....')
