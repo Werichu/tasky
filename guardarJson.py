@@ -4,8 +4,8 @@ import json
 """
 Esta funcion se encarga de guardar las tareas digitadas por el usuario
 
-NOTA: no guarda los objetos creados de la lista que recibe como argumento, solo los datos de los objetos, por lo tanto
-por el momento no puede volver a crear objetos
+NOTA: LA funcion lo guarda ningun objeto generado por el programa, solo transforma los datos de cada objeto
+a un diccionario.
 """
 def guardarArchivo(todas_las_tareas):
 
@@ -28,8 +28,24 @@ def guardarArchivo(todas_las_tareas):
             tareas_para_guardar.append(datos_tarea)
         
         #guardando en archivo
-        with open(nombre_archivo,"w",encoding="utf=8") as archivo:
+        with open(nombre_archivo,"w",encoding="utf-8") as archivo:
             json.dump(tareas_para_guardar,archivo,indent=4,ensure_ascii=False)
             
         print(f"Tareas guardadas...... se guardaron {len(todas_las_tareas)} tareas.")
-    
+
+
+"""
+Esta funcion se carga los datos guardados en archivos JSON
+"""
+def cargarArchivo():
+    nombre_archivo = "mis_tareas.json"
+
+    try:
+        with open (nombre_archivo,"r",encoding="utf-8") as archivo:
+            tareas_guardadas = json.load(archivo)
+
+        print(f"\n Se cargaron {len(tareas_guardadas)} tareas registradas")
+        return tareas_guardadas
+    except FileNotFoundError:
+        print("\n No hay tareas registradas aun.......")
+        return []
