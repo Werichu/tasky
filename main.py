@@ -2,14 +2,13 @@ from alta import darAlta
 from actualizar import actualizarTarea
 from mostrarTodo import mostrarTodo
 from tareasHechas import tareasHechas
+from tareasNorealizadas import tareasNorealizadas
 from tareasPendientes import tareasPendientes
 from baja import darBaja
-from guardarJson import guardarArchivo, cargarArchivo
+from guardarJson import guardarArchivo,cargarArchivo
 
 def main(): 
-    #variable que controla el menu de opciones
     opcion = 1
-
     #carga los datos del archivo json
     tareas_cargadas = cargarArchivo()  # esta variable carga diccionarios
     
@@ -36,35 +35,38 @@ def main():
 
     while opcion != 0:
         print('===== Tasky =====')
-        print('[1.] Registrar tarea\n[2.] modificar estado de la tarea\n[3.] Mostrar todo\n[4.] Mostrar tareas hechas')
-        print('[5.] Mostrar tareas pendientes\n[6.] borrar tareas\n[7.] Guardar tareas')
+        print('[1.] Registrar tarea\n[2.] modificar estado de la tarea\n[3.] Mostrar todo\n[4.] Mostrar tareas realizadas')
+        print('[5.] Mostrar tareas no realizadas\n[6.] Mostrar tareas en progreso\n[7.] borrar tareas')
         print('[0.] Salir')
-        opcion = int(input('>>>>> opcion: '))
+        entrada = input('>>> opcion: ')
+        
+        if entrada.isdigit():
+            opcion = int(entrada)
 
-        if opcion == 1:
-            #todas las tareas que registre el usuario  y retorne la funcion se van a guardar en esta variable
-            tareasNuevas = darAlta()
-            #cuando el usuario vuelva a llamar la funcion "darAlta" los nuevos registros se guardan en una lista global
-            todas_las_tareas.extend(tareasNuevas)
+            if opcion == 1:
+                #todas las tareas que registre el usuario  y retorne la funcion se van a guardar en esta variable
+                tareasNuevas = darAlta()
+                #cuando el usuario vuelva a llamar la funcion "darAlta" los nuevos registros se guardan en una lista global
+                todas_las_tareas.extend(tareasNuevas)
 
-        elif opcion == 2:
-            actualizarTarea(todas_las_tareas)
-        elif opcion == 3:
-            mostrarTodo(todas_las_tareas)
-        elif opcion == 4:
-            tareasHechas(todas_las_tareas)
-        elif opcion == 5:
-            tareasPendientes(todas_las_tareas)
-        elif opcion == 6:
-            #la lista: "todas_las_tareas" guarda la nueva lista de tareas generada al borrar un elemento de la lista
-            todas_las_tareas = darBaja(todas_las_tareas)
-        elif opcion == 7:
-            guardarArchivo(todas_las_tareas)
-        elif opcion == 0:
-            guardarArchivo(todas_las_tareas)
-            print('Byteees!!!!')
-        else: 
-            print('Error, opcion no valida.....')
+            elif opcion == 2:
+                actualizarTarea(todas_las_tareas)
+            elif opcion == 3:
+                mostrarTodo(todas_las_tareas)
+            elif opcion == 4:
+                tareasHechas(todas_las_tareas)
+            elif opcion == 5:
+                tareasNorealizadas(todas_las_tareas)
+            elif opcion == 6:
+                tareasPendientes(todas_las_tareas)
+            elif opcion == 7:
+                #la lista: "todas_las_tareas" guarda la nueva lista de tareas generada al borrar un elemento de la lista
+                todas_las_tareas = darBaja(todas_las_tareas)
+            elif opcion == 0:
+                guardarArchivo(todas_las_tareas)
+                print('Byteees!!!!')
+            else: print('Error, opcion no valida.....')
+        else: print('Error, digite solo numeros.......')
 
 if __name__ == "__main__":
     main()

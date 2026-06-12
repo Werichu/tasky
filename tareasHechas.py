@@ -8,10 +8,10 @@ def tareasHechas(todas_las_tareas):
         
     else:
         for tarea in todas_las_tareas:
-            if tarea.status == "Hecho":
+            if tarea.status == "Realizado":
                 print(f'\nId: {tarea.id}')
                 print(f'Descripcion: {tarea.description}')
                 print(f'Estado: {tarea.status}')
                 print(f'Fecha de creacion: {tarea.createdAt}')
                 print(f'Fecha de actualizacion: {tarea.updatedAt}\n')
-            else: print("Error, no hay tareas registreadas con el estado 'Hecho'\n")
+            else: print("Error, no hay tareas registreadas con el estado 'Realizado'\n")
