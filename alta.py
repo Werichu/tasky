@@ -12,7 +12,14 @@ def darAlta():
 
     while True:
         descripcion = input("\nDigite su descripcion: ")
-        estado = input("Digite el estado de la tarea (No realizado / En progreso / Realizado): ")
+        #Este ciclo se encarga de validar que el usuario digite un estado valido al registrar una tarea
+        while True:
+            estado = input("Digite el estado de la tarea (No realizado / En progreso / Realizado): ")
+            #si estado coincide con alguna opcion de la lista el ciclo se rompe y el programa continua
+            if estado in ["No realizado, En progreso, Realizado"]:
+                break
+            else:
+                print("Error en la asignacion de estado, verifique su asignacion\n")
         fechaCreacion = datetime.today()
         fechaActualizacion = datetime.today()
         print(f'\n >>>>>> tarea registrada con el id: {id}')

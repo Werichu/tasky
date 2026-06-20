@@ -34,7 +34,18 @@ def main():
         todas_las_tareas.append(tarea)
 
     while opcion != 0:
-        print('===== Tasky =====')
+        print("""\
+               ░██████████                      ░██                  
+                   ░██                          ░██                  
+                   ░██     ░██████    ░███████  ░██    ░██░██    ░██ 
+                   ░██          ░██  ░██        ░██   ░██ ░██    ░██ 
+                   ░██     ░███████   ░███████  ░███████  ░██    ░██ 
+                   ░██    ░██   ░██         ░██ ░██   ░██ ░██   ░███ 
+                   ░██     ░█████░██  ░███████  ░██    ░██ ░█████░██ 
+                                                                 ░██ 
+                                                            ░███████
+        """)  
+                                                      
         print('[1.] Registrar tarea\n[2.] modificar estado de la tarea\n[3.] Mostrar todo\n[4.] Mostrar tareas realizadas')
         print('[5.] Mostrar tareas no realizadas\n[6.] Mostrar tareas en progreso\n[7.] borrar tareas')
         print('[0.] Salir')
