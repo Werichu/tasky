@@ -44,7 +44,7 @@ def cargarArchivo():
         with open (nombre_archivo,"r",encoding="utf-8") as archivo:
             tareas_guardadas = json.load(archivo)
 
-        print(f"\n Se cargaron {len(tareas_guardadas)} tareas registradas")
+        print(f"\n Se cargaron {len(tareas_guardadas)} tareas registradas\n\n")
         return tareas_guardadas
     except FileNotFoundError:
         print("\n No hay tareas registradas aun.......")
