@@ -45,7 +45,6 @@ def main():
                                                                  ░██ 
                                                             ░███████
         """)  
-                                                      
         print('[1.] Registrar tarea\n[2.] modificar estado de la tarea\n[3.] Mostrar todo\n[4.] Mostrar tareas realizadas')
         print('[5.] Mostrar tareas no realizadas\n[6.] Mostrar tareas en progreso\n[7.] borrar tareas')
         print('[0.] Salir')
@@ -55,9 +54,10 @@ def main():
             opcion = int(entrada)
 
             if opcion == 1:
-                #todas las tareas que registre el usuario  y retorne la funcion se van a guardar en esta variable
-                tareasNuevas = darAlta()
-                #cuando el usuario vuelva a llamar la funcion "darAlta" los nuevos registros se guardan en una lista global
+                #calculacion del siguiente id
+                siguiente_id = obtener_sig_id(todas_las_tareas)
+
+                tareasNuevas= darAlta(siguiente_id) #pasa al ultimo id si hay alguna tarea disponible
                 todas_las_tareas.extend(tareasNuevas)
 
             elif opcion == 2:
@@ -78,6 +78,15 @@ def main():
                 print('Byteees!!!!')
             else: print('Error, opcion no valida.....')
         else: print('Error, digite solo numeros.......')
+
+#Funcion miscelanea para calcular id
+
+def obtener_sig_id(tareas):
+#calcular el siguiente id disponible
+    if not tareas:
+        return 1
+    #si ya hay una tarea ocupando el id, devolvera el siguiente espacio
+    return max(tarea.id for tarea in tareas) + 1
 
 if __name__ == "__main__":
     main()
