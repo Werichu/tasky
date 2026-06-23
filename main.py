@@ -10,7 +10,7 @@ from guardarJson import guardarArchivo,cargarArchivo
 def main(): 
     opcion = 1
     #carga los datos del archivo json
-    tareas_cargadas = cargarArchivo()  # esta variable carga diccionarios
+    tareas_cargadas = cargarArchivo()  # esta variable carga el archivo de diccionarios
     
     #conversion de los diccionarios a objetos Tarea
     todas_las_tareas = []
