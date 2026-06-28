@@ -1,6 +1,7 @@
 from tarea import Tarea
 from datetime import datetime
 import json
+from misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
 """
 Esta funcion se encarga de guardar las tareas digitadas por el usuario
 
@@ -45,7 +46,9 @@ def cargarArchivo():
             tareas_guardadas = json.load(archivo)
 
         print(f"\n Se cargaron {len(tareas_guardadas)} tareas del archivo\n\n")
+        print(getchr("Presione cualquier tecla para continuar....."))
         return tareas_guardadas
     except FileNotFoundError:
         print("\n Error, No hay tareas guardadas en el archivo.......\n\n")
+        print(getchr("Presione cualquier tecla para continuar....."))
         return []

@@ -1,4 +1,5 @@
 from tarea import Tarea
+from misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
 '''
 Esta funcion elimina una tarea por ID
 Funcionamiento:
@@ -29,7 +30,10 @@ def darBaja(todas_las_tareas):
                 todas_las_tareas.pop(i)
                 
                 print(f"se elimino la tarea con el id: {idBuscar}")
+                print(getchr("Presione cualquier tecla para continuar....."))
                 return todas_las_tareas
             
         else: print(f"\n>>>>>> Error, no existe una id con el numero: {idBuscar}")
+        print(getchr("Presione cualquier tecla para continuar....."))
+        
         return todas_las_tareas
