@@ -6,6 +6,7 @@ from tareasNorealizadas import tareasNorealizadas
 from tareasPendientes import tareasPendientes
 from baja import darBaja
 from guardarJson import guardarArchivo,cargarArchivo
+from misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
 
 def main(): 
     opcion = 1
@@ -34,6 +35,7 @@ def main():
         todas_las_tareas.append(tarea)
 
     while opcion != 0:
+        limpiarPantalla()
         print("""\
                ░██████████                      ░██                  
                    ░██                          ░██                  
@@ -54,10 +56,14 @@ def main():
             opcion = int(entrada)
 
             if opcion == 1:
-                #calculacion del siguiente id
+                """calculacion del siguiente id
+                la funcion "obtener_sig_id" recibe la lista de objetos con todas las tareas incluyendo el id
+                , la variable "siguiente_id" guarda el parametro status del objeto tarea
+                """
                 siguiente_id = obtener_sig_id(todas_las_tareas)
-
-                tareasNuevas= darAlta(siguiente_id) #pasa al ultimo id si hay alguna tarea disponible
+                """tareas nuevas almacena temporalmente la tarea registrada por el usuario y al final se aniaden 
+                a la lista global que almacena todas las tareas """
+                tareasNuevas = darAlta(siguiente_id) #pasa al ultimo id si hay alguna tarea disponible
                 todas_las_tareas.extend(tareasNuevas)
 
             elif opcion == 2:
@@ -79,8 +85,13 @@ def main():
             else: print('Error, opcion no valida.....')
         else: print('Error, digite solo numeros.......')
 
-#Funcion miscelanea para calcular id
-
+#Funcion auxiliar para calcular id recibido sea el caso que se hayan cargado archivos
+"""Esta funcion almacena la lista de tareas globales digitadas por el usuario
+   Funcionamiento
+   1. Si no hay alguna tarea dentro de la variable global esta retornara el id con el numero 1
+   2. caso contrario de que haya alguna tarea registrada se iterara el numero de id dentro de la lista global de tareas
+   y el maximo de la id se incrementara en 1 dependiendo el numero de tareas registradas, lo cual devolvera la funcion
+"""
 def obtener_sig_id(tareas):
 #calcular el siguiente id disponible
     if not tareas:

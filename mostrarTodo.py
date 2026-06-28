@@ -1,4 +1,5 @@
 from tarea import Tarea
+from misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
 '''
 Esta funcion se encarga de mostrar todas las tareas registradas por el usuario, independientemente 
 si estan hechas o no
@@ -14,6 +15,7 @@ def mostrarTodo(todas_las_tareas):
     #si no hay tareas registradas se mostrara este mensaje
     if not todas_las_tareas:
         print("\nNo hay tareas registradas...")
+        print(getchr("Presione cualquier tecla para continuar....."))
     else: 
         for tarea in todas_las_tareas:
             print(f'\nId: {tarea.id}')
@@ -21,4 +23,5 @@ def mostrarTodo(todas_las_tareas):
             print(f'Estado: {tarea.status}')
             print(f'Fecha de creacion: {tarea.createdAt}')
             print(f'Fecha de actualizacion: {tarea.updatedAt}\n')
+    print(getchr("Presione cualquier tecla para continuar....."))
     

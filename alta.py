@@ -1,6 +1,7 @@
 from datetime import date
 from datetime import datetime
 from tarea import Tarea
+from misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
 
 '''
 En esta funcion damos de alta las tareas registradas por el usuario, mediante un listado de objetos
@@ -38,6 +39,7 @@ def darAlta(id_inicial=1):
         #siempre preguntamos si desea continuar registrando tareas
         continuar = input("Desea agregar otra tarea? (S/n): ")
         if continuar.lower() != 's':
+            print(getchr("Presione cualquier tecla para continuar....."))
             print("\n")
             break
     #al final la funcion retorna todas las tareas que el usuario agrego
