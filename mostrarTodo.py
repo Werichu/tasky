@@ -16,12 +16,14 @@ def mostrarTodo(todas_las_tareas):
     if not todas_las_tareas:
         print("\nNo hay tareas registradas...")
         print(getchr("Presione cualquier tecla para continuar....."))
-    else: 
-        for tarea in todas_las_tareas:
-            print(f'\nId: {tarea.id}')
-            print(f'Descripcion: {tarea.description}')
-            print(f'Estado: {tarea.status}')
-            print(f'Fecha de creacion: {tarea.createdAt}')
-            print(f'Fecha de actualizacion: {tarea.updatedAt}\n')
+        return
+    
+    print("▁"*90)
+    print(f"{'ID':<5} | {'Estado':<12} | {'Fecha de creacion':<20} | {'Fecha actualiz.':<20} | {'Descripcion'}")
+    print("▁"*90)
+    
+    for tarea in todas_las_tareas:
+        print(f"{tarea.id:<5} | {tarea.status:<12} | {str(tarea.createdAt)[:19]:<20} | {str(tarea.updatedAt)[:19]:<20} | {tarea.description}")
+        print("▁"*90)
     print(getchr("Presione cualquier tecla para continuar....."))
     

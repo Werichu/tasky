@@ -92,6 +92,11 @@ def main():
    2. caso contrario de que haya alguna tarea registrada se iterara el numero de id dentro de la lista global de tareas
    y el maximo de la id se incrementara en 1 dependiendo el numero de tareas registradas, lo cual devolvera la funcion
 """
+
+'''
+Esta funcion actua al momento de tener un archivo json cargado, reanuda el conteo desde el ultimo id del 
+diccionario registrado
+'''
 def obtener_sig_id(tareas):
 #calcular el siguiente id disponible
     if not tareas:
