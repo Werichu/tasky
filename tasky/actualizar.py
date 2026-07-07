@@ -1,6 +1,6 @@
 from datetime import date
 from datetime import datetime
-from tarea import Tarea
+from .tarea import Tarea
 '''
 Esta funcion se encarga de actualizar el estado de las tareas que el usuario haya registrado.
 

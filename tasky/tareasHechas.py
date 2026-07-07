@@ -1,5 +1,5 @@
-from tarea import Tarea
-from misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
+from .tarea import Tarea
+from .misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
 
 def tareasHechas(todas_las_tareas):
 

@@ -1,12 +1,12 @@
-from alta import darAlta
-from actualizar import actualizarTarea
-from mostrarTodo import mostrarTodo
-from tareasHechas import tareasHechas
-from tareasNorealizadas import tareasNorealizadas
-from tareasPendientes import tareasPendientes
-from baja import darBaja
-from guardarJson import guardarArchivo,cargarArchivo
-from misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
+from .alta import darAlta
+from .actualizar import actualizarTarea
+from .mostrarTodo import mostrarTodo
+from .tareasHechas import tareasHechas
+from .tareasNorealizadas import tareasNorealizadas
+from .tareasPendientes import tareasPendientes
+from .baja import darBaja
+from .guardarJson import guardarArchivo,cargarArchivo
+from .misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
 
 def main(): 
     opcion = 1
@@ -16,7 +16,7 @@ def main():
     #conversion de los diccionarios a objetos Tarea
     todas_las_tareas = []
     for tarea_dict in tareas_cargadas:
-        from tarea import Tarea
+        from .tarea import Tarea
         from datetime import datetime
         
         #estas variables convienrten las fechas de string a datetime
