@@ -1,5 +1,5 @@
-from tarea import Tarea
-from misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
+from .tarea import Tarea
+from .misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
 '''
 Esta funcion se encarga de mostrar todas las tareas registradas por el usuario, independientemente 
 si estan hechas o no
