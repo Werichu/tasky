@@ -1,5 +1,5 @@
-from .tarea import Tarea
-from .misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
+from tarea import Tarea
+from misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
 
 #la funcion recibe como argunento todas las tareas digitadas por el usuario
 def tareasPendientes(todas_las_tareas):

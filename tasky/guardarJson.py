@@ -1,7 +1,7 @@
-from .tarea import Tarea
+from tarea import Tarea
 from datetime import datetime
 import json
-from .misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
+from misc import limpiarPantalla, getchr #archivo que guarda funciones auxiliares
 """
 Esta funcion se encarga de guardar las tareas digitadas por el usuario
 
