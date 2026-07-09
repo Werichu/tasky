@@ -23,7 +23,9 @@ Podemos tanto **Registrar, actualizar, listar, eliminar y guardar tareas** media
 ### En Linux / macOS
 
 # 1. Instalar pipx (si no lo tienes)
+```bash
 sudo apt install pipx         # En Debian/Ubuntu
+
 # o
 brew install pipx              # En macOS con Homebrew
 
@@ -53,6 +55,7 @@ pipx install git+https://github.com/Werichu/tasky.git
 
 # 4. ¡Listo! Ejecutar:
 tasky
+```
 
 ## 📜 Licencia
 Este proyecto está bajo la **Licencia MIT**.
