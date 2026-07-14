@@ -22,48 +22,48 @@ Podemos tanto **Registrar, actualizar, listar, eliminar y guardar tareas** media
 
 ### En Linux / macOS
 
-# 1. Instalar pipx (si no lo tienes)
+### 1. Instalar pipx (si no lo tienes)
 ```bash
 sudo apt install pipx         # En Debian/Ubuntu
 ```
-# o
+### o
 ```bash
 brew install pipx              # En macOS con Homebrew
 ```
-# 2. Asegurar que pipx esté en el PATH
+### 2. Asegurar que pipx esté en el PATH
 ```bash
 pipx ensurepath
 ```
-# 3. Cerrar y volver a abrir la terminal, o ejecutar:
+### 3. Cerrar y volver a abrir la terminal, o ejecutar:
 ```bash
 source ~/.bashrc               # En Linux con bash
 ```
-# o
+### o
 ```bash
 source ~/.zshrc                # En Linux/macOS con zsh
 ```
-# 4. Instalar Tasky
+### 4. Instalar Tasky
 ```bash
 pipx install git+https://github.com/Werichu/tasky.git
 ```
-# 5. ¡Listo! Ejecutar:
+### 5. ¡Listo! Ejecutar:
 ```bash
 tasky
 ```
 
 ### En Windows
-# 1. Instalar pipx (desde PowerShell como administrador)
+### 1. Instalar pipx (desde PowerShell como administrador)
 ```bash
 python -m pip install --user pipx
 python -m pipx ensurepath
 ```
-# 2. Cerrar y volver a abrir la terminal
+### 2. Cerrar y volver a abrir la terminal
 
-# 3. Instalar Tasky
+### 3. Instalar Tasky
 ```bash
 pipx install git+https://github.com/Werichu/tasky.git
 ```
-# 4. ¡Listo! Ejecutar:
+### 4. ¡Listo! Ejecutar:
 ```bash
 tasky
 ```
